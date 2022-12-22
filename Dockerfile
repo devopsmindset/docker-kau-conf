@@ -8,7 +8,6 @@ RUN apt update \
 #copy the script into the docker image
 WORKDIR /app
 COPY . .
-RUN ls
 #run the configuration script
 RUN sudo dos2unix ./system-configuration.sh \
     && sudo ./system-configuration.sh
