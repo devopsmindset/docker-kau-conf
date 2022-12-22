@@ -24,17 +24,17 @@ sudo apt-get -y install software-properties-common
 sudo apt-get -y install ansible
 
 # Verify packages are installed
-packages=("zip" "ansible" "ca-certificates")
-for pkg in ${packages[@]}; do
-
-	is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
-	if [ "${is_pkg_installed}" == "install ok installed" ]; then
-		echo ${pkg} is installed.
-	else
-		echo ${pkg} has not been correctly installed.
-		exit 3
-	fi
-done
+#packages=("zip" "ansible" "ca-certificates")
+#for pkg in ${packages[@]}; do
+#
+#	is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
+#	if [ "${is_pkg_installed}" == "install ok installed" ]; then
+#		echo ${pkg} is installed.
+#	else
+#		echo ${pkg} has not been correctly installed.
+#		exit 3
+#	fi
+#done
 
 # Install Roche certificates
 sudo apt-get -y update
@@ -55,18 +55,20 @@ sudo apt-get -y install python-pip
 sudo apt-get -y install python3-pip
 
 # Verify packages are installed
-packages=("git" "gcc" "python-pip" "python3-pip")
-for pkg in ${packages[@]}; do
-	
-	is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
-	if [ "${is_pkg_installed}" == "install ok installed" ]; then
-		echo ${pkg} is installed.
-		if [ "${pkg}" == "python-pip" ]; then
-			sudo pip install pywinrm
-		else
-			sudo pip3 install pywinrm
-		fi
-	fi
-done
+#packages=("git" "gcc" "python-pip" "python3-pip")
+#for pkg in ${packages[@]}; do
+#
+#	is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
+#	if [ "${is_pkg_installed}" == "install ok installed" ]; then
+#		echo ${pkg} is installed.
+#		if [ "${pkg}" == "python-pip" ]; then
+#			sudo pip install pywinrm
+#		else
+#			sudo pip3 install pywinrm
+#		fi
+#	fi
+#done
+sudo pip install pywinrm
+sudo pip3 install pywinrm
 exit 0
 
