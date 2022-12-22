@@ -38,8 +38,11 @@ sudo apt-get -y install ansible
 
 # Install Roche certificates
 sudo apt-get -y update
-cd /usr/local/share/ca-certificates || exit
+echo "apt-get update done"
+cd /usr/local/share/ca-certificates
+echo "cd done"
 sudo wget --no-check-certificate --no-verbose http://repository.kiosk.roche.com/public/certificates/roche.com/roche_com_enterprise.crt -O roche_com_enterprise.crt
+eho "wget 1 done"
 sudo wget --no-check-certificate --no-verbose http://repository.kiosk.roche.com/public/certificates/roche.com/roche_com_root.crt -O roche_com_root.crt
 sudo wget --no-check-certificate --no-verbose http://repository.kiosk.roche.com/public/certificates/roche.com/geo_trust.crt -O geo_trust.crt
 sudo wget --no-check-certificate --no-verbose http://certinfo.roche.com/rootcerts/Roche%20G3%20Root%20CA.crt -O roche_com_CA1_G3.crt
