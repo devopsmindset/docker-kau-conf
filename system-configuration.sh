@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This script will configure your local Windows Linux image (Ubuntu) system to
 # start working with latest vRA workflows based on Ansible roles.
 
