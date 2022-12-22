@@ -36,17 +36,6 @@ for pkg in ${packages[@]}; do
 	fi
 done
 
-# Install Roche certificates
-#sudo apt-get -y update
-#cd /usr/local/share/ca-certificates
-#sudo wget --no-check-certificate --no-verbose http://repository.kiosk.roche.com/public/certificates/roche.com/roche_com_enterprise.crt -O roche_com_enterprise.crt
-#sudo wget --no-check-certificate --no-verbose http://repository.kiosk.roche.com/public/certificates/roche.com/roche_com_root.crt -O roche_com_root.crt
-#sudo wget --no-check-certificate --no-verbose http://repository.kiosk.roche.com/public/certificates/roche.com/geo_trust.crt -O geo_trust.crt
-#sudo wget --no-check-certificate --no-verbose http://certinfo.roche.com/rootcerts/Roche%20G3%20Root%20CA.crt -O roche_com_CA1_G3.crt
-#sudo wget --no-check-certificate --no-verbose http://certinfo.roche.com/rootcerts/Roche%20Root%20CA%201%20-%20G2.crt -O roche_com_CA1_G2.crt
-#sudo wget --no-check-certificate --no-verbose http://certinfo.roche.com/rootcerts/Roche%20Root%20CA%201.crt -O roche_com_CA1.crt
-#update-ca-certificates
-
 # Python installation
 sudo apt-get -y update
 sudo apt-get -y install git
