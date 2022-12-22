@@ -10,4 +10,4 @@ WORKDIR /app
 COPY . .
 #run the configuration script
 RUN sudo dos2unix ./system-configuration.sh \
-    && sudo ./system-configuration.sh
+    && sudo bash ./system-configuration.sh
