@@ -38,7 +38,7 @@ done
 
 # Install Roche certificates
 sudo apt-get -y update
-sudo cd /usr/local/share/ca-certificates
+cd /usr/local/share/ca-certificates || exit
 sudo wget --no-check-certificate --no-verbose http://repository.kiosk.roche.com/public/certificates/roche.com/roche_com_enterprise.crt -O roche_com_enterprise.crt
 sudo wget --no-check-certificate --no-verbose http://repository.kiosk.roche.com/public/certificates/roche.com/roche_com_root.crt -O roche_com_root.crt
 sudo wget --no-check-certificate --no-verbose http://repository.kiosk.roche.com/public/certificates/roche.com/geo_trust.crt -O geo_trust.crt
