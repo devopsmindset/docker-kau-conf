@@ -13,15 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:    
       fail-fast: false
-      matrix:
-        config:
-          - { base: latest, user: "root", java: 8 }
-          - { base: dind, user: "root", java: 8 }
-          - { base: dind-rootless, user: "rootless", java: 8 }
-          - { base: latest, user: "root", java: 11, imageSuffix: "-java11" }
-          - { base: dind, user: "root", java: 11, imageSuffix: "-java11" }
-          - { base: dind-rootless, user: "rootless", java: 11, imageSuffix: "-java11" }
-          - { base: dind, user: "root", java: 17, imageSuffix: "-java17" }
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
@@ -33,5 +24,5 @@ jobs:
           add_git_labels: true
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/${{ github.event.repository.name }}
-          tags: ${{ matrix.config.base }}${{ matrix.config.imageSuffix }}-PR-${{github.event.number}}
+
 
